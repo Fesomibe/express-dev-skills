@@ -24,6 +24,14 @@
       </li>
     <% }); %>
   </ul>
-  <a href="/skills/new">Add New Skill</a>
+  <!-- <a href="/skills/new">Add New Skill</a> -->
+  <h3>Add New Skill</h3>
+
+<form action="/skills" method="POST" autocomplete="off">
+  <input type="text" name="skill">
+  <button type="submit">Save Skill</button>
+</form>
+
+
 </body>
 </html>
