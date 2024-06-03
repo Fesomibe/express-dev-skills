@@ -17,7 +17,9 @@ module.exports = {
   }
 
   function newSkill(req, res) {
-    res.render('skills/new', { title: 'New Skill' });
+    res.render('skills/new', { 
+      title: 'New Skill' 
+    });
   }
 
 function index(req, res) {
@@ -27,14 +29,12 @@ function index(req, res) {
   }
 
 function show(req, res) {
-    const skill = Skill.getOne(req.params.id)
-    res.render('skills/show', { skill });
+  res.render('skills/show', { 
+    skill: Skill.getOne(req.params.id)
+  })
 }
 
 function create(req, res) {
-  console.log(req.body);
-  // The model is responsible for creating data
   Skill.create(req.body);
-  // Do a redirect anytime data is changed
   res.redirect('/skills');
 }
